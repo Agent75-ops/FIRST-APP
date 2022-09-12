@@ -1,0 +1,95 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:content-box;
+    font-family: 'Fredoka One', cursive;
+}
+
+body{
+    height: 100vh;
+    width:100%;
+}
+
+main{ height: 100%; width: 100%;}
+
+#article1{ height: 100%; width: 100%; background-image:url(./imgs/bg.jpg); background-position: center; background-size:cover;background-repeat: no-repeat;}
+
+.container{
+    height: 70%;
+    width:30%;
+    background: radial-gradient(rgba(0, 105, 148,.4),rgb(0, 105, 148,.6));
+    margin:auto;
+    transform:translateY(-100%);
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 30px;
+    transition: transform .3s ease-in-out;
+    overflow:hidden;
+}
+
+.container h1{
+    font-size: 3rem; 
+    transform: translateY(-200%);
+    transition:transform .3s;
+}
+#register{
+    width:85%;
+    height: 78%;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap:2rem;
+}
+
+#register div{
+    width:100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap:.6rem;
+    transition: transform .3s ease-out;
+  
+}
+
+#register div input{
+    width:100%;
+    height: 40%;
+}
+
+#register div label{
+    font-size:2rem;
+}
+
+#Email{
+    transform: translateX(-120%);
+}
+
+#Pass{
+    transform: translateX(120%);
+}
+
+#confirm{
+    transform: translateX(-120%);
+}
+
+#register input[type='submit']{
+    transition:transform .3s;
+    transform:scale(0)
+}
+
+/* ---------------------------------- 2  */
+
+#register #submit {
+    width: 100%;
+    height: 40%;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-around;
+     align-items: center;
+
+}
+

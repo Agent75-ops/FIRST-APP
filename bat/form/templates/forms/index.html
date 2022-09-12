@@ -1,0 +1,58 @@
+{% extends "forms/layout.html" %}
+
+{% block title %}
+    index
+{% endblock%}
+
+
+{% block body %}
+
+<main>
+    <article id="article1">
+        <div class="container">
+            <h1>Register</h1>
+            <p style="color:red">{{message}}</p>
+            <form id="register" action="{% url 'form:register' %}" method="POST">
+                {% csrf_token %}
+                <div id = "username">
+                    <label>Username</label>
+                    <input type="text" autocomplete="off" name="username">
+                </div>
+                <div id="Email">
+                    <label>Email</label>
+                    <input type="Email" autocomplete="off" autofocus name="email">
+                </div>
+                <div id="Pass">
+                    <label>Password</label>
+                    <input type="Password" autocomplete="off" name="pass">
+                </div>
+                <div Id="confirm">
+                    <label>Confirm</label>
+                    <input type="Password" autocomplete="off" name="conf">
+                </div>
+                <input type="submit" value="submit" style="width:4rem; height:3rem; cursor: pointer;">
+                <p>already have an account ? <a href="{% url 'form:login' %}">login</a></p>
+            </form>    
+        </div>
+    </article>
+</main>
+
+<script>
+    email = document.getElementById("Email")
+    pass = document.getElementById("Pass")
+    conf = document.getElementById("confirm")
+    container = document.getElementsByClassName("container")[0]
+    divs = document.querySelectorAll("#register div")
+    h1 = document.querySelector(".container h1")
+    butt = document.querySelector("#register input[type='submit']")
+    window.onload=()=>{
+        container.style.transform = "translateY(20%)" 
+    }
+    setTimeout(()=>{divs.forEach((div)=>{div.style.transform ="none"})
+                    h1.style.transform ="none"
+                    butt.style.transform="none"}, 500)
+    
+    
+</script>
+    
+{% endblock %}

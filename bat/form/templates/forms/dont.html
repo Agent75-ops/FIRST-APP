@@ -1,0 +1,16 @@
+{%extends "forms/layout.html"%}
+
+
+{% block title%}
+    done
+{% endblock%}
+
+
+{% block body %}
+    <h1>REGISTER COMPLETE</h1>
+
+    <ol>
+        <li> username : {{request.user.username}}</li>
+        <li> email : {{request.user.email}}</li>
+    </ol>
+{% endblock %}

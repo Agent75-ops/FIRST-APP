@@ -1,0 +1,12 @@
+{% extends "reg/layout.html" %}
+
+{% block title %}
+    register
+{% endblock%}
+
+{% block body %}
+    <form action="{% url 'register' %}" mathod="post">
+        {% csrf_token%}
+        {{form}}
+    </form>
+{% endblock %}

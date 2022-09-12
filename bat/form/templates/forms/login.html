@@ -1,0 +1,52 @@
+{% extends "forms/layout.html"%}
+
+
+{% block title%}
+    login
+{% endblock%}
+
+
+{% block body %}
+<main>
+    <article id="article1">
+        <div class="container">
+            <h1>Login</h1>
+            <p style="color:red">{{message}}</p>
+            <form id="register" action="{% url 'form:login' %}" method="POST">
+                {% csrf_token %}
+                <div id="Email">
+                    <label>Username</label>
+                    <input type="text" autocomplete="off" autofocus name="email">
+                </div>
+                <div id="Pass">
+                    <label>Password</label>
+                    <input type="Password" autocomplete="off" name="pass">
+                </div>
+                <div id="submit"> 
+                    <p>don't have an acount ?<a href="{% url 'form:register'%}">register</a></p>
+                    <input type="submit" value="login" style="width:4rem; height:3rem; cursor: pointer;">
+                </div>
+              
+            </form>    
+        </div>
+    </article>
+</main>
+
+<script>
+    email = document.getElementById("Email")
+    pass = document.getElementById("Pass")
+    container = document.getElementsByClassName("container")[0]
+    divs = document.querySelectorAll("#register div")
+    h1 = document.querySelector(".container h1")
+    butt = document.querySelector("#register input[type='submit']")
+    window.onload=()=>{
+        container.style.transform = "translateY(20%)" 
+    }
+    setTimeout(()=>{divs.forEach((div)=>{div.style.transform ="none"})
+                    h1.style.transform ="none"
+                    butt.style.transform="none"}, 500)
+    
+    
+</script>
+
+{% endblock %}
